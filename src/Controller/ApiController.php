@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Controller;
 
@@ -32,7 +33,7 @@ class ApiController extends AbstractController
         SerializerInterface $serializer,
         ValidatorInterface $validator,
         ViolationsMapper $mapper
-    )
+    ): JsonResponse
     {
         $violations = $validator->validate($request->getContent(), [new NotBlank(), new Json()]);
 
