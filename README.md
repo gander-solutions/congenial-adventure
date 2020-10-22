@@ -14,6 +14,17 @@ php bin/console doctrine:migrations:migrate
 
 ## Preview
 
+#### Linux with `symfony cli`
+```shell script
+symfony server:start
+```
+```shell script
+curl --request POST \
+  --url https://127.0.0.1:8000/api/products \
+  --header 'content-type: application/json' \
+  --data '{"name": "Foo Bar","price": "123.45"}'
+```
+
 #### Linux with docker:
 ```shell script
 docker run \
@@ -23,9 +34,10 @@ docker run \
   --publish 80:80 \
     gander/dev:7.4
 ```
-Open: http://api.localhost/
-#### Linux with `symfony cli`
 ```shell script
-symfony server:start
+curl --request POST \
+  --url http://api.localhost/api/products \
+  --header 'content-type: application/json' \
+  --data '{"name": "Lorem ipsum","price": "333.33"}'
 ```
-Open: https://127.0.0.1:8000/
+ 
