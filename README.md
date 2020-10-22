@@ -32,7 +32,7 @@ docker run \
   --name symfony-rest-api \
   --volume ${PWD}:/www/api.localhost \
   --publish 80:80 \
-    gander/dev:7.4
+    gander/dev:7.3
 ```
 ```shell script
 curl --request POST \
